@@ -6,7 +6,7 @@ def GetLiveOutputFromProcess_WhileRunning(cmd):
     '''
     Get the live output from the process while its running
     '''
-    arg = shlex.split('python test.py')
+    arg = shlex.split(cmd)
     proc = subprocess.Popen(arg,shell=True,bufsize=3000,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
     
     outputs = []
