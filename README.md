@@ -11,7 +11,7 @@ def GetLiveOutputFromProcess_WhileRunning(cmd):
     '''
     Get the live output from the process while its running
     '''
-    arg = shlex.split('python test.py')
+    arg = shlex.split(cmd)
     proc = subprocess.Popen(arg,shell=True,bufsize=3000,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
     
     outputs = []
@@ -36,4 +36,5 @@ def GetLiveOutputFromProcess_WhileRunning(cmd):
 if __name__ == '__main__':
     outs = GetLiveOutputFromProcess_WhileRunning('python infinite_printer.py')
     print(outs) # Only get executed once the process terminated. Live stdout data will be always printed by 'GetLiveOutputFromProcess_WhileRunning'
+
 ```
